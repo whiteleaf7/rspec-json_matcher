@@ -9,7 +9,7 @@ module RSpec
       end
 
       def matches?(json)
-        @parsed = json.kind_of?(Hash) ? json : JSON.parse(json)
+        @parsed = json.kind_of?(String) ? JSON.parse(json) : json
         if has_expectation?
           compare do |reason|
             @reasons << reason
