@@ -4,6 +4,10 @@ module RSpec
       def compare(&reason)
         ExactComparer.compare(parsed, expected, &reason)
       end
+
+      def inspect
+        self.expected.ai
+      end
     end
   end
 end
